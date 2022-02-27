@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mhusika</title>
+    <link rel="stylesheet" href="https://unpkg.com/docute@4/dist/docute.css">
+</head>
+
+<body>
+    <div id="docute"></div>
+    <script src="https://unpkg.com/docute@4/dist/docute.js"></script>
+    <script>
+        const showAuthor = {
+            // Plugin name
+            name: 'showAuthor',
+            // Extend core features
+            extend(api) {
+                api.processMarkdown(text => {
+                    return text.replace(/{author}/g, '> Written by Oenga John')
+                })
+            }
+        }
+        console.dir(navigator);
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+        }
+        new Docute({
+            title: 'Tech Learn',
+            layout: 'narrow',
+            highlight: ['java', 'xml', 'console'],
+            plugins: [
+                showAuthor
+            ],
+            nav: [{
+                    title: 'Home',
+                    link: '/'
+                },
+                {
+                    title: 'About',
+                    link: '/about/'
+                },
+                {
+                    title: 'Contact',
+                    link: '/contact/'
+                },
+                {
+                    title: 'Blog',
+                    link: '/blog/'
+                },
+                {
+                    title: 'GitHub',
+                    link: 'https://github.com/oengajohn'
+                },
+
+
+            ],
+            sidebar: [{
+                    title: 'Testing',
+                    children: [{
+                            title: 'Unit Testing',
+                            link: '/blog/unit-testing/'
+                        },
+                        {
+                            title: 'Arquillian',
+                            link: '/blog/arquillian/'
+                        }
+                    ]
+                },
+                // An external link
+                {
+                    title: 'GitHub',
+                    link: 'https://github.com/egoist/docute'
+                }
+            ],
+            // banner: `Please <a href="https://donate.com/link">
+            //     donate</a>
+            // <ExternalLinkIcon /> to support this project!`
+        });
+    </script>
+</body>
+
+</html>
