@@ -71,4 +71,3 @@ Unit testing by its very nature focuses on a unit of code. Hence it can’t catc
 
 - **UNIT TESTING** is defined as a type of software testing where individual units or components of a software are tested.
 - As you can see, there can be a lot involved in unit testing. It can be complex or rather simple depending on the application being tested and the testing strategies, tools and philosophies used. Unit testing is always necessary on some level. That is a certainty.
-
